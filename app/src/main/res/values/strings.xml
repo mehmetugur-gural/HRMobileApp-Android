@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HRMobileApp-Android</string>
+    <string name="login_title">Giriş</string>
 </resources>
