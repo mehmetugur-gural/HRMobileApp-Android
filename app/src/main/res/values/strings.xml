@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">HRMobileApp-Android</string>
+
+    <!-- Login Screen Resources -->
     <string name="login_title">Giriş</string>
+    <string name="login_usermail">E-Mail Adresinizi Girin</string>
+    <string name="login_userpass">Şifrenizi Girin</string>
 </resources>

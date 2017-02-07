@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/loginbg"
     tools:context="com.asworks.hrmobileapp_android.LoginActivity">
@@ -17,5 +15,127 @@
         android:layout_centerHorizontal="true"
         android:textSize="36sp"
         android:paddingTop="30dp"
-        android:text="Hoşgeldin" />
+        android:text="Hoşgeldin"
+        android:fontFamily="sans-serif-light"
+        android:id="@+id/lblWelcome" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLoginUserName"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="950px"
+        android:height="140px"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/lblWelcome"
+        android:layout_centerHorizontal="true"
+        android:maxLines="1"
+        android:hint="@string/login_usermail"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLoginPass"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="950px"
+        android:height="140px"
+        android:layout_marginTop="7dp"
+        android:maxLines="1"
+        android:hint="@string/login_userpass"
+        android:textColorHint="@color/colorHintText"
+        android:layout_below="@+id/txtLoginUserName"
+        android:layout_alignStart="@+id/txtLoginUserName" />
+
+    <ImageButton
+        android:id="@+id/btnLogin"
+        android:scaleType="centerInside"
+        android:background="@null"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/loginbuttonbg"
+        android:layout_below="@+id/txtLoginPass"
+        android:layout_alignStart="@+id/txtLoginPass" />
+    
+    <TextView
+        android:text="Giriş Yap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/lblLogin"
+        android:textSize="22dp"
+        android:layout_below="@+id/txtLoginPass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp" />
+
+
+    <ImageButton
+        android:id="@+id/btnRegister"
+        android:scaleType="centerInside"
+        android:background="@null"
+        android:gravity="center"
+        android:src="@drawable/btnregister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="51dp"
+        android:layout_below="@+id/lblLogin"
+        android:layout_alignEnd="@+id/lblLogin"
+        android:layout_alignStart="@+id/btnLogin" />
+
+    <ImageButton
+        android:id="@+id/btnLostPassword"
+        android:scaleType="centerInside"
+        android:background="@null"
+        android:gravity="center"
+        android:src="@drawable/btnlostpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnRegister"
+        android:layout_alignStart="@+id/lblLogin"
+        android:layout_marginStart="43dp"
+        android:layout_alignEnd="@+id/lblLostPassword" />
+
+    <TextView
+        android:text="Yeni Kayıt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/lblRegister"
+        android:textSize="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/btnLogin"
+        android:layout_alignEnd="@+id/btnRegister"
+        android:layout_marginEnd="30dp" />
+
+    <TextView
+        android:text="Şifremi Unuttum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/lblLostPassword"
+        android:textSize="20dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_alignEnd="@+id/txtLoginPass"
+        android:layout_alignBottom="@+id/lblRegister" />
+
+
+    <ImageButton
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="-15dp"
+        android:id="@+id/ibTest"
+        android:src="@color/colorFacebook"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/btnRegister"
+        android:layout_centerHorizontal="true" />
+
+
+
 </RelativeLayout>
