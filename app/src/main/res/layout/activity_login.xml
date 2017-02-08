@@ -56,8 +56,9 @@
         android:layout_width="wrap_content"
         android:src="@drawable/loginbuttonbg"
         android:layout_below="@+id/txtLoginPass"
-        android:layout_alignStart="@+id/txtLoginPass" />
-    
+        android:layout_alignStart="@+id/txtLoginPass"
+        android:layout_alignEnd="@+id/txtLoginPass" />
+
     <TextView
         android:text="Giriş Yap"
         android:layout_width="wrap_content"
@@ -67,7 +68,7 @@
         android:textSize="22dp"
         android:layout_below="@+id/txtLoginPass"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="30dp" />
 
 
     <ImageButton
@@ -107,7 +108,7 @@
         android:layout_marginTop="18dp"
         android:layout_below="@+id/btnLogin"
         android:layout_alignEnd="@+id/btnRegister"
-        android:layout_marginEnd="30dp" />
+        android:layout_marginEnd="32dp" />
 
     <TextView
         android:text="Şifremi Unuttum"
@@ -116,10 +117,12 @@
         android:textColor="@color/colorPrimaryText"
         android:id="@+id/lblLostPassword"
         android:textSize="20dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/btnLogin"
         android:layout_alignEnd="@+id/txtLoginPass"
-        android:layout_alignBottom="@+id/lblRegister" />
+        android:layout_alignBottom="@+id/lblRegister"
+        android:layout_marginEnd="0dp"
+        android:paddingRight="6dp"/>
 
 
     <ImageButton
@@ -136,6 +139,27 @@
         android:layout_below="@+id/btnRegister"
         android:layout_centerHorizontal="true" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/fblogo"
+        android:id="@+id/imgFb"
+        android:layout_alignTop="@+id/ibTest"
+        android:layout_alignStart="@+id/lblRegister"
+        android:layout_marginStart="-25dp"
+        android:layout_marginTop="3dp"/>
+
+    <TextView
+        android:text="Facebook İle Giriş Yap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imgFb"
+        android:layout_alignStart="@+id/lblLogin"
+        android:layout_marginTop="8dp"
+        android:id="@+id/txtFb"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="20dp"
+        android:layout_marginStart="-35dp"/>
 
 
 </RelativeLayout>
