@@ -16,5 +16,5 @@ public class ResponseBase<T> {
 
     @SerializedName("Data")
     @Expose
-    public List<T> data;
+    public T data;
 }
