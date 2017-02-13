@@ -5,9 +5,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-/**
- * Created by mehmetugurgural on 12/02/2017.
- */
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -16,7 +13,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.title_layout);
-        SetCustomTitle(getString(R.string.login_title));
+        SetCustomTitle(getString(R.string.register_title));
 
     }
 
