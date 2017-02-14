@@ -8,4 +8,13 @@
 
     <!-- Register Screen Resources -->
     <string name="register_title">Yeni Kayıt</string>
+    <string name="register_complete">Kaydı Tamamla</string>
+    <string name="register_name">İsim</string>
+    <string name="register_surname">Soyisim</string>
+    <string name="register_mail">E-Mail Adresi</string>
+    <string name="register_password">Şifre</string>
+    <string name="register_password2">Şifre Tekrar</string>
+
+    <!-- Main Screen Resources -->
+    <string name="main_title">Etkinlikler</string>
 </resources>

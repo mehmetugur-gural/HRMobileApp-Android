@@ -5,4 +5,96 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/loginbg">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtRegisterName"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="950px"
+        android:height="140px"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/lblWelcome"
+        android:layout_centerHorizontal="true"
+        android:maxLines="1"
+        android:hint="@string/register_name"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/txtRegisterSurname"
+    android:background="@drawable/edittext_rounded_corners"
+    android:width="950px"
+    android:height="140px"
+    android:layout_marginTop="10dp"
+    android:layout_below="@+id/txtRegisterName"
+    android:layout_centerHorizontal="true"
+    android:maxLines="1"
+    android:hint="@string/register_surname"
+    android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtRegisterMail"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="950px"
+        android:height="140px"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtRegisterSurname"
+        android:layout_centerHorizontal="true"
+        android:maxLines="1"
+        android:hint="@string/register_mail"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtRegisterPassword"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="950px"
+        android:height="140px"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtRegisterMail"
+        android:layout_centerHorizontal="true"
+        android:maxLines="1"
+        android:hint="@string/register_password"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtRegisterPassword2"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="950px"
+        android:height="140px"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtRegisterPassword"
+        android:layout_centerHorizontal="true"
+        android:maxLines="1"
+        android:hint="@string/register_password2"
+        android:textColorHint="@color/colorHintText"/>
+
+    <ImageButton
+        android:id="@+id/btnCompleteRegister"
+        android:scaleType="centerInside"
+        android:background="@null"
+        android:gravity="center"
+        android:layout_height="90dp"
+        android:layout_width="90dp"
+        android:src="@drawable/loginbuttonbg"
+        android:layout_below="@+id/txtRegisterPassword2"
+        android:layout_alignStart="@+id/txtRegisterPassword2"
+        android:layout_alignEnd="@+id/txtRegisterPassword2" />
+
+    <TextView
+        android:text="@string/register_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/lblLogin"
+        android:textSize="22dp"
+        android:layout_below="@+id/txtRegisterPassword2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
 </RelativeLayout>
