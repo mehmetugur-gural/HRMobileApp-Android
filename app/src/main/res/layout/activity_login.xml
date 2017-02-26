@@ -24,8 +24,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtLoginUserName"
         android:background="@drawable/edittext_rounded_corners"
-        android:width="950px"
-        android:height="140px"
+        android:width="320dp"
+        android:height="50dp"
         android:layout_marginTop="57dp"
         android:layout_below="@+id/lblWelcome"
         android:layout_centerHorizontal="true"
@@ -38,14 +38,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtLoginPass"
         android:background="@drawable/edittext_rounded_corners"
-        android:width="950px"
-        android:height="140px"
+        android:width="320dp"
+        android:height="50dp"
         android:layout_marginTop="7dp"
-        android:maxLines="1"
         android:hint="@string/login_userpass"
+        android:inputType="textPassword"
+        android:fontFamily="sans-serif"
+        android:minHeight="50dp"
         android:textColorHint="@color/colorHintText"
         android:layout_below="@+id/txtLoginUserName"
         android:layout_alignStart="@+id/txtLoginUserName" />
+
+
 
     <ImageButton
         android:id="@+id/btnLogin"
@@ -160,6 +164,5 @@
         android:textColor="@color/colorPrimaryText"
         android:textSize="20dp"
         android:layout_marginStart="-35dp"/>
-
 
 </RelativeLayout>

@@ -14,9 +14,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.title_layout);
-        SetCustomTitle(getString(R.string.register_title));
+        getSupportActionBar().setTitle("Yeni Kayıt");
 
         ImageButton btnRegister = (ImageButton)findViewById(R.id.btnCompleteRegister);
         btnRegister.setOnClickListener(btnRegisterClick);
@@ -29,10 +27,4 @@ public class RegisterActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Üyeliğiniz Yöneticilerimiz Tarafından Onaylandıktan Sonra Aktif Olacaktır.", Toast.LENGTH_SHORT).show();
         }
     };
-
-    void SetCustomTitle(String title)
-    {
-        TextView textViewTitle = (TextView) findViewById(R.id.title_text);
-        textViewTitle.setText(title);
-    }
 }

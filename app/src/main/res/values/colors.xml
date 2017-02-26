@@ -6,4 +6,7 @@
     <color name="colorHintText">#A2A2A2</color>
     <color name="colorPrimaryText">#FFF</color>
     <color name="colorFacebook">#3468af</color>
+
+    <color name="viewBg">#f1f5f8</color>
+    <color name="album_title">#4c4c4c</color>
 </resources>

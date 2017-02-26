@@ -20,20 +20,29 @@ import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Callback;
 
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.title_layout);
-        SetCustomTitle(getString(R.string.login_title));
+        getSupportActionBar().setTitle("Giriş");
 
         ImageButton btnLogin = (ImageButton)findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(BtnLoginClick);
 
+        ImageButton btnRegister = (ImageButton)findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(BtnRegisterClick);
+
     }
+
+    private View.OnClickListener BtnRegisterClick = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent register = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(register);
+        }
+    };
 
     private View.OnClickListener BtnLoginClick = new View.OnClickListener() {
         public void onClick(View v) {
@@ -71,10 +80,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     };
-
-    void SetCustomTitle(String title)
-    {
-        TextView textViewTitle = (TextView) findViewById(R.id.title_text);
-        textViewTitle.setText(title);
-    }
 }

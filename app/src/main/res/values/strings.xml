@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">HRMobileApp-Android</string>
+    <string name="settings_title">Ayarlar</string>
 
     <!-- Login Screen Resources -->
     <string name="login_title">Giriş</string>
