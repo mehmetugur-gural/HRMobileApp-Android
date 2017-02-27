@@ -1,16 +1,12 @@
 package com.asworks.hrmobileapp_android.model;
 
 import android.content.Context;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.asworks.hrmobileapp_android.R;
 import com.bumptech.glide.Glide;
@@ -55,7 +51,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
         holder.title.setText(event.getName());
         holder.count.setText(event.getBeginDate() + " - " + event.getEndDate());
 
-        Glide.with(mContext).load(event.getEventDocument()).into(holder.thumbnail);
+        Glide.with(mContext).load("https://cms.aslabs.in/" + event.getEventDocument()).into(holder.thumbnail);
     }
 
 

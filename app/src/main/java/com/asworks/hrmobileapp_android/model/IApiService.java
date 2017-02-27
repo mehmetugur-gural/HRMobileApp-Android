@@ -15,4 +15,7 @@ public interface IApiService {
 
     @GET("/api/aday/giris")
     public Call<ResponseBase<Employee>> login(@Query("mail") String mail, @Query("password") String password);
+
+    @GET("api/etkinlik/etkinlik-listesi")
+    public  Call<ResponseBase<List<Event>>> eventList();
 }

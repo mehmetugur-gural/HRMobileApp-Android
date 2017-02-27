@@ -11,12 +11,19 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.asworks.hrmobileapp_android.model.Event;
 import com.asworks.hrmobileapp_android.model.EventAdapter;
+import com.asworks.hrmobileapp_android.model.IApiService;
+import com.asworks.hrmobileapp_android.model.ResponseBase;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ActiveEvents extends Fragment {
 
@@ -30,19 +37,52 @@ public class ActiveEvents extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_active_events, container, false);
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
-        eventList = new ArrayList<>();
-        adapter = new EventAdapter(getContext(), eventList);
+        final View rootView = inflater.inflate(R.layout.activity_active_events, container, false);
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
+        IApiService eventService = IApiService.retrofit.create(IApiService.class);
+        Call<ResponseBase<List<Event>>> eventRequest = eventService.eventList();
 
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
+        eventRequest.enqueue(new Callback<ResponseBase<List<Event>>>() {
+            @Override
+            public void onResponse(Call<ResponseBase<List<Event>>> call, Response<ResponseBase<List<Event>>> response) {
+                ResponseBase<List<Event>> eventListResponse = response.body();
 
-        prepareEventList();
+                if (eventListResponse.data != null)
+                {
+                    recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+                    eventList = eventListResponse.data;
+                    adapter = new EventAdapter(getContext(), eventList);
+
+                    RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
+
+                    recyclerView.setLayoutManager(mLayoutManager);
+                    recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
+                    recyclerView.setAdapter(adapter);
+
+                    adapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBase<List<Event>>> call, Throwable t) {
+                Toast.makeText(getContext(), "Hata Oluştu, Lütfen Tekrar Deneyiniz!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+//        recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+//        eventList = new ArrayList<>();
+//        adapter = new EventAdapter(getContext(), eventList);
+//
+//        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
+//
+//        recyclerView.setLayoutManager(mLayoutManager);
+//        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.setAdapter(adapter);
+//
+//        prepareEventList();
         return rootView;
     }
 
@@ -52,30 +92,27 @@ public class ActiveEvents extends Fragment {
     }
 
     private void prepareEventList() {
-        String[] covers = new String[]{
-                "https://cms.aslabs.in/Dosyalar/Resimler/blog1.jpg",
-                "https://cms.aslabs.in/Dosyalar/Resimler/Event-management.png",
-                "https://cms.aslabs.in/Dosyalar/Resimler/maxresdefault.jpg"};
 
-        Event a = new Event();
-        a.setName("Etkinlik 1");
-        a.setDescription("Bir takım çeşitli olaylar");
-        a.setEventDocument(covers[0]);
+        IApiService eventService = IApiService.retrofit.create(IApiService.class);
+        Call<ResponseBase<List<Event>>> eventRequest = eventService.eventList();
 
-        Event b = new Event();
-        b.setName("Etkinlik 2");
-        b.setDescription("Bir takım çeşitli olaylar");
-        b.setEventDocument(covers[1]);
+        eventRequest.enqueue(new Callback<ResponseBase<List<Event>>>() {
+            @Override
+            public void onResponse(Call<ResponseBase<List<Event>>> call, Response<ResponseBase<List<Event>>> response) {
+                ResponseBase<List<Event>> eventListResponse = response.body();
 
-        Event c = new Event();
-        c.setName("Etkinlik 3");
-        c.setDescription("Bir takım çeşitli olaylar");
-        c.setEventDocument(covers[2]);
-        eventList.add(a);
-        eventList.add(b);
-        eventList.add(c);
+                if (eventListResponse.data != null)
+                {
+                    eventList = eventListResponse.data;
+                    adapter.notifyDataSetChanged();
+                }
+            }
 
-        adapter.notifyDataSetChanged();
+            @Override
+            public void onFailure(Call<ResponseBase<List<Event>>> call, Throwable t) {
+                Toast.makeText(getContext(), "Hata Oluştu, Lütfen Tekrar Deneyiniz!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
