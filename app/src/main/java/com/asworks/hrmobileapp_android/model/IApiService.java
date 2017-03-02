@@ -18,4 +18,10 @@ public interface IApiService {
 
     @GET("api/etkinlik/etkinlik-listesi")
     public  Call<ResponseBase<List<Event>>> eventList();
+
+    @GET("api/etkinlik/gecmis-etkinlik-listesi")
+    public  Call<ResponseBase<List<Event>>> pastEventList();
+
+    @GET("api/etkinlik/katildigin-etkinlikler/{employeeID}")
+    public  Call<ResponseBase<List<Event>>> attendedEventList(@Query("employeeID") String employeeID);
 }

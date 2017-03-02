@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.asworks.hrmobileapp_android.model.Employee;
 import com.asworks.hrmobileapp_android.model.IApiService;
 import com.asworks.hrmobileapp_android.model.ResponseBase;
+import com.asworks.hrmobileapp_android.model.SessionManager;
 
 import java.util.List;
 
@@ -23,9 +24,12 @@ import retrofit2.Callback;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private SessionManager currentSession;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        currentSession = new SessionManager(getApplicationContext());
         setContentView(R.layout.activity_login);
         getSupportActionBar().setTitle("Giriş");
 
@@ -63,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (currentEmployee.data != null)
                         {
+                            currentSession.SetCurrentUser(currentEmployee.data);
                             Intent mainPage = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(mainPage);
                         }

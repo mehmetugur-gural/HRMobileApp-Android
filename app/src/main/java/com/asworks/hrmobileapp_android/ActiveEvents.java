@@ -18,7 +18,6 @@ import com.asworks.hrmobileapp_android.model.EventAdapter;
 import com.asworks.hrmobileapp_android.model.IApiService;
 import com.asworks.hrmobileapp_android.model.ResponseBase;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -70,49 +69,12 @@ public class ActiveEvents extends Fragment {
             }
         });
 
-
-//        recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
-//        eventList = new ArrayList<>();
-//        adapter = new EventAdapter(getContext(), eventList);
-//
-//        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
-//
-//        recyclerView.setLayoutManager(mLayoutManager);
-//        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
-//        recyclerView.setItemAnimator(new DefaultItemAnimator());
-//        recyclerView.setAdapter(adapter);
-//
-//        prepareEventList();
         return rootView;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-    private void prepareEventList() {
-
-        IApiService eventService = IApiService.retrofit.create(IApiService.class);
-        Call<ResponseBase<List<Event>>> eventRequest = eventService.eventList();
-
-        eventRequest.enqueue(new Callback<ResponseBase<List<Event>>>() {
-            @Override
-            public void onResponse(Call<ResponseBase<List<Event>>> call, Response<ResponseBase<List<Event>>> response) {
-                ResponseBase<List<Event>> eventListResponse = response.body();
-
-                if (eventListResponse.data != null)
-                {
-                    eventList = eventListResponse.data;
-                    adapter.notifyDataSetChanged();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBase<List<Event>>> call, Throwable t) {
-                Toast.makeText(getContext(), "Hata Oluştu, Lütfen Tekrar Deneyiniz!", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
