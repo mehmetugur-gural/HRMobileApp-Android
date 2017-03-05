@@ -71,7 +71,7 @@ public class Event {
     }
 
     public String getBeginDate() {
-        return beginDate;
+        return beginDate.substring(0, 10);
     }
 
     public void setBeginDate(String beginDate) {
@@ -79,7 +79,7 @@ public class Event {
     }
 
     public String getEndDate() {
-        return endDate;
+        return endDate.substring(0, 10);
     }
 
     public void setEndDate(String endDate) {

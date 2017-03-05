@@ -24,4 +24,7 @@ public interface IApiService {
 
     @GET("api/etkinlik/katildigin-etkinlikler/{employeeID}")
     public  Call<ResponseBase<List<Event>>> attendedEventList(@Query("employeeID") String employeeID);
+
+    @GET("api/etkinlik/etkinlik/{eventID}")
+    public  Call<ResponseBase<Event>> eventDetail(@Query("eventID") String eventID);
 }

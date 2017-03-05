@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Toast.makeText(getApplicationContext(), "Şimdi Ayarlar!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Profil Sayfası", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

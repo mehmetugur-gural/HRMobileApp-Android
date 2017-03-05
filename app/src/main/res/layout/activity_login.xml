@@ -87,7 +87,7 @@
         android:layout_marginEnd="51dp"
         android:layout_below="@+id/lblLogin"
         android:layout_alignEnd="@+id/lblLogin"
-        android:layout_alignStart="@+id/btnLogin" />
+        android:layout_alignStart="@+id/btnLogin"/>
 
     <ImageButton
         android:id="@+id/btnLostPassword"
@@ -112,7 +112,8 @@
         android:layout_marginTop="18dp"
         android:layout_below="@+id/btnLogin"
         android:layout_alignEnd="@+id/btnRegister"
-        android:layout_marginEnd="32dp" />
+        android:layout_marginEnd="32dp"
+        />
 
     <TextView
         android:text="Şifremi Unuttum"
@@ -130,18 +131,12 @@
 
 
     <ImageButton
-        android:layout_width="fill_parent"
-        android:layout_height="90dp"
-        android:layout_marginLeft="-15dp"
+        android:layout_height="55dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
         android:id="@+id/ibTest"
         android:src="@color/colorFacebook"
-        android:adjustViewBounds="true"
-        android:cropToPadding="false"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:layout_marginTop="47dp"
-        android:layout_below="@+id/btnRegister"
-        android:layout_centerHorizontal="true" />
+        android:background="@null" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -159,7 +154,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imgFb"
         android:layout_alignStart="@+id/lblLogin"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/txtFb"
         android:textColor="@color/colorPrimaryText"
         android:textSize="20dp"

@@ -4,6 +4,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content">
 
+
     <android.support.v7.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
@@ -46,6 +47,48 @@
                 android:paddingRight="@dimen/album_title_padding"
                 android:textSize="@dimen/songs_count"
                 android:textColor="@color/colorPrimary"/>
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--card_view:srcCompat="@drawable/star_icon"-->
+                <!--android:id="@+id/favicon"-->
+                <!--android:layout_below="@id/title"-->
+                <!--android:layout_weight="1" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/favcount"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/title"-->
+                <!--android:paddingLeft="15dp"-->
+                <!--android:layout_marginLeft="25dp"-->
+                <!--android:paddingRight="@dimen/album_title_padding"-->
+                <!--android:paddingTop="@dimen/album_title_padding"-->
+                <!--android:textColor="@color/album_title"-->
+                <!--android:textSize="12dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--card_view:srcCompat="@drawable/tl_icon"-->
+                <!--android:id="@+id/priceicon"-->
+                <!--android:layout_below="@id/title"-->
+                <!--android:layout_weight="1"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/price"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/title"-->
+                <!--android:paddingLeft="15dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:paddingRight="@dimen/album_title_padding"-->
+                <!--android:paddingTop="@dimen/album_title_padding"-->
+                <!--android:textColor="@color/album_title"-->
+                <!--android:textSize="12dp" />-->
+
 
         </RelativeLayout>
 
