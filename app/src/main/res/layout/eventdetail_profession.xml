@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Etkinliğe başvurmak için lütfen profilinizde kayıtlı olan mesleklerinizden birini seçiniz."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfession"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"/>
+
+    <Spinner
+        android:id="@+id/professionSelect"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/txtProfession" />
+
+    <TextView
+        android:text="* Başvurduğunuz etkinliğin seçtiğiniz meslekten aday aradığından emin olunuz. Aksi takdirde etkinliğe başvurunuz tamamlanamayacaktır."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfessionWarning"
+        android:textColor="@color/colorHintText"
+        android:textSize="14dp"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:layout_below="@+id/professionSelect"/>
+
+    <ImageButton
+        android:id="@+id/btnCompleteEventAttend"
+        android:background="@null"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:src="@drawable/loginbuttonbg"
+        android:layout_below="@id/txtProfessionWarning"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:text="Başvuruyu Tamamla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/lblAttendEvent"
+        android:textSize="22dp"
+        android:layout_marginBottom="15dp"
+        android:layout_centerInParent="true"
+        android:layout_alignBottom="@+id/btnCompleteEventAttend"/>
+
+</RelativeLayout>
