@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             EditText txtLoginUser = (EditText)findViewById(R.id.txtLoginUserName);
             EditText txtLoginPass = (EditText)findViewById(R.id.txtLoginPass);
 
-            if (!txtLoginUser.getText().equals("") && !txtLoginPass.getText().equals("") )
+            if (!TextUtils.isEmpty(txtLoginUser.getText().toString().trim()) || !TextUtils.isEmpty(txtLoginPass.getText().toString().trim()))
             {
 
                 IApiService loginService = IApiService.retrofit.create(IApiService.class);

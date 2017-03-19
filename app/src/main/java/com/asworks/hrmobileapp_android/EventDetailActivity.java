@@ -19,6 +19,7 @@ import com.asworks.hrmobileapp_android.model.Event;
 import com.asworks.hrmobileapp_android.model.EventAttendAdapter;
 import com.asworks.hrmobileapp_android.model.EventProfessionQuota;
 import com.asworks.hrmobileapp_android.model.IApiService;
+import com.asworks.hrmobileapp_android.model.Profession;
 import com.asworks.hrmobileapp_android.model.ResponseBase;
 import com.asworks.hrmobileapp_android.model.SessionManager;
 import com.bumptech.glide.Glide;
@@ -31,20 +32,22 @@ import retrofit2.Response;
 
 public class EventDetailActivity extends AppCompatActivity {
 
+    IApiService eventService = IApiService.retrofit.create(IApiService.class);
+    private Employee currentUser;
+    private Event currentEventDetail;
     private SessionManager currentSession;
     private List<EventProfessionQuota> professionQuotaList;
+    AlertDialog eventAttendDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         currentSession = new SessionManager(getApplicationContext());
+        currentUser = currentSession.GetCurrentUser();
         setContentView(R.layout.activity_eventdetail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        IApiService eventService = IApiService.retrofit.create(IApiService.class);
-
         Call<ResponseBase<List<EventProfessionQuota>>> professionQuotaRequest = eventService.eventProfessionQuota(getIntent().getStringExtra("eventID"));
-
 
         professionQuotaRequest.enqueue(new Callback<ResponseBase<List<EventProfessionQuota>>>() {
             @Override
@@ -54,7 +57,7 @@ public class EventDetailActivity extends AppCompatActivity {
                 StringBuilder eventProfessionContent = new StringBuilder();
                 if (professionQuotaList.size() > 0)
                 {
-                    eventProfessionContent.append("<br/><br/><span style='color:#51C4D4;font-size:16px'>Etkinlik Kotaları :</span><br/>");
+                    eventProfessionContent.append("<span style='color:#51C4D4;font-size:16px'>Etkinlik Kotaları :</span><br/><br/>");
 
                     for (EventProfessionQuota professionItem : professionQuotaList) {
                         eventProfessionContent.append("<span style='color:#51C4D4'>Meslek Grubu : <span>" + professionItem.getProfession().getTitle() + "<br/>");
@@ -82,13 +85,14 @@ public class EventDetailActivity extends AppCompatActivity {
                 ResponseBase<Event> currentEvent = response.body();
 
                 if (currentEvent.data != null) {
+                    currentEventDetail = currentEvent.data;
                     getSupportActionBar().setTitle(currentEvent.data.getName());
                     ImageView imgThumb = (ImageView) findViewById(R.id.imgEventThumb);
                     TextView txtEventTitle = (TextView) findViewById(R.id.txtEventTitle);
                     TextView txtEventDate = (TextView) findViewById(R.id.txtEventDate);
                     TextView txtEventContent = (TextView) findViewById(R.id.txtEventContent);
 
-                    Glide.with(getApplicationContext()).load("https://cms.aslabs.in/" + currentEvent.data.getEventDocument()).into(imgThumb);
+                    Glide.with(getApplicationContext()).load(IApiService.apiUrl + currentEvent.data.getEventDocument()).into(imgThumb);
                     txtEventTitle.setText(currentEvent.data.getName());
                     txtEventDate.setText(currentEvent.data.getBeginDate() + " - " + currentEvent.data.getEndDate());
 
@@ -98,7 +102,7 @@ public class EventDetailActivity extends AppCompatActivity {
                     if (currentEvent.data.getRestriction() != "")
                     {
                         eventContent.append("<br/><br/><span style='color:#51C4D4;font-size:16px'>Etkinlik Kuralları :</span><br/>");
-                        eventContent.append(currentEvent.data.getRestriction() + "<br/><br/>");
+                        eventContent.append(currentEvent.data.getRestriction());
                     }
 
                     txtEventContent.setText(Html.fromHtml(eventContent.toString()));
@@ -113,6 +117,41 @@ public class EventDetailActivity extends AppCompatActivity {
         ImageButton btnAttendEvent = (ImageButton)findViewById(R.id.btnAttendEvent);
         btnAttendEvent.setOnClickListener(btnAttendEventClick);
     }
+
+    private View.OnClickListener btnCompleteAttendEventClick = new View.OnClickListener() {
+        public void onClick(View v) {
+
+            Spinner professionSelect = (Spinner) eventAttendDialog.findViewById(R.id.professionSelect);
+            Integer selectedProfession = professionSelect.getSelectedItemPosition();
+            List<Profession> currentUserProfessionList = currentSession.GetCurrentUser().getProfession();
+
+
+            Call<ResponseBase<Event>> saveEventEmployeeRequest = eventService.saveEventEmployee(currentEventDetail.getID(), currentUser.getID(), currentUserProfessionList.get(selectedProfession).getID());
+
+            saveEventEmployeeRequest.enqueue(new Callback<ResponseBase<Event>>() {
+                @Override
+                public void onResponse(Call<ResponseBase<Event>> call, Response<ResponseBase<Event>> response) {
+                    if (response.body().success)
+                    {
+                        Toast.makeText(eventAttendDialog.getContext(), "Kayıt İşleminiz Tamamlandı." , Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(EventDetailActivity.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.makeText(eventAttendDialog.getContext(), response.body().message , Toast.LENGTH_SHORT).show();
+                        eventAttendDialog.dismiss();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBase<Event>> call, Throwable t) {
+                    Toast.makeText(eventAttendDialog.getContext(), "Hata Oluştu, Lütfen Tekrar Deneyiniz!" , Toast.LENGTH_SHORT).show();
+                    eventAttendDialog.dismiss();
+                }
+            });
+        }};
 
     private View.OnClickListener btnAttendEventClick = new View.OnClickListener() {
         public void onClick(View v) {
@@ -136,7 +175,10 @@ public class EventDetailActivity extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(EventDetailActivity.this);
                 builder.setView(alertView);
-                builder.create().show();
+                eventAttendDialog = builder.create();
+                eventAttendDialog.show();
+                ImageButton btnCompleteAttendEvent = (ImageButton)alertView.findViewById(R.id.btnCompleteEventAttend);
+                btnCompleteAttendEvent.setOnClickListener(btnCompleteAttendEventClick);
 
             }
             else

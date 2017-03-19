@@ -57,8 +57,15 @@ public class EventProfessionQuota {
         this.quantity = quantity;
     }
 
-    public Integer getGender() {
-        return gender;
+    public String getGender() {
+        if (gender == 1)
+        {
+            return "Bay";
+        }
+        else
+        {
+            return "Bayan";
+        }
     }
 
     public void setGender(Integer gender) {

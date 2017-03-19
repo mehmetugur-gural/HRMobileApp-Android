@@ -37,7 +37,7 @@ public class EventAttendAdapter extends ArrayAdapter<Profession> {
         label.setTextColor(Color.BLACK);
         label.setTextSize(18);
         label.setText(values.get(position).getTitle());
-        label.setTag(values.get(position).getID());
+        label.setId(values.get(position).getID());
         return label;
     }
 
@@ -47,7 +47,7 @@ public class EventAttendAdapter extends ArrayAdapter<Profession> {
         label.setTextColor(Color.BLACK);
         label.setTextSize(18);
         label.setText(values.get(position).getTitle());
-        label.setTag(values.get(position).getID());
+        label.setId(values.get(position).getID());
 
         return label;
     }

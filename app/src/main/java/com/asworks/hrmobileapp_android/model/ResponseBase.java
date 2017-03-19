@@ -2,7 +2,6 @@ package com.asworks.hrmobileapp_android.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
 
 public class ResponseBase<T> {
 
