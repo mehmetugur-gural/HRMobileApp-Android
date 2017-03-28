@@ -5,6 +5,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -21,6 +22,9 @@ public interface IApiService {
 
     @GET("/api/aday/giris")
     public Call<ResponseBase<Employee>> login(@Query("mail") String mail, @Query("password") String password);
+
+    @POST("/api/aday/yeni-aday")
+    public Call<ResponseBase<Employee>> register(@Body Employee employeeEntity);
 
     @GET("api/etkinlik/etkinlik-listesi")
     public  Call<ResponseBase<List<Event>>> eventList();
