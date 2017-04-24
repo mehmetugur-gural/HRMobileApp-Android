@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HRMobileApp-Android</string>
+    <string name="app_name">B2 HR Etkinlik</string>
     <string name="settings_title">Ayarlar</string>
 
     <!-- Login Screen Resources -->
@@ -18,4 +18,35 @@
 
     <!-- Main Screen Resources -->
     <string name="main_title">Etkinlikler</string>
+    <string name="facebook_app_id">427738737588371</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Settings Resources -->
+    <string name="personal_information">Kişisel Bilgilerim</string>
+    <string name="profile_information">Profil Bilgilerim</string>
+    <string name="size_information">Boy - Kilo &amp; Ölçü Bilgilerim</string>
+    <string name="available_information">Çalışabileceğim Gün &amp; Saatler</string>
+    <string name="job_experience">İş Deneyimlerim</string>
+    <string name="new_job_experience">Yeni İş Deneyimi Ekle</string>
+    <string name="education_information">Eğitim Bilgilerim</string>
+    <string name="new_education_information">Yeni Eğitim Bilgisi Ekle</string>
+    <string name="certificate_information">Sertifika &amp; Yabancı Dil Bilgilerim</string>
+    <string name="new_certificate_information">Yeni Sertifika &amp; Dil Bilgisi Ekle</string>
+
+    <!-- Settings Profile Resources -->
+    <string name="profile_name">İsim</string>
+    <string name="profile_surname">Soyisim</string>
+    <string name="profile_mail">E-Mail Adresi</string>
+    <string name="profile_password">Şifre</string>
+    <string name="profile_tcidentity">TC Kimlik No</string>
+    <string name="profile_phone">Telefon</string>
+    <string name="profile_address">Adres</string>
+    <string name="profile_birthdate">Doğum Tarihi</string>
+    <string name="profile_birthplace">Doğum Yeri</string>
+    <string name="profile_gender">Cinsiyet</string>
+    <string name="profile_picture">Resim</string>
+    <string name="profile_cv">CV Dosyası</string>
+    <string name="profile_driverlicense">Ehliyet Durumu</string>
+    <string name="profile_activedriver">Aktif Araç Kullanımı</string>
+
 </resources>

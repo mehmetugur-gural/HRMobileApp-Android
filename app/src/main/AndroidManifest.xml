@@ -17,9 +17,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".EventDetailActivity"></activity>
+
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".EventDetailActivity" />
+        <activity android:name=".LostPasswordActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".SettingsProfileActivity" />
+        <activity android:name=".SettingsSizeActivity" />
+        <activity android:name=".SettingsAvailabilityActivity" />
+        <activity android:name=".SettingsJobActivity" />
+        <activity android:name=".SettingsEducationActivity" />
+        <activity android:name=".SettingsCertificateActivity" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
     </application>
 
 </manifest>

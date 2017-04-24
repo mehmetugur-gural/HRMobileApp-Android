@@ -1,14 +1,12 @@
 package com.asworks.hrmobileapp_android;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.asworks.hrmobileapp_android.model.Employee;
@@ -16,11 +14,11 @@ import com.asworks.hrmobileapp_android.model.IApiService;
 import com.asworks.hrmobileapp_android.model.ResponseBase;
 import com.asworks.hrmobileapp_android.model.SessionManager;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Callback;
+
+import com.facebook.FacebookSdk;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -40,12 +38,22 @@ public class LoginActivity extends AppCompatActivity {
         ImageButton btnRegister = (ImageButton)findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(BtnRegisterClick);
 
+        ImageButton btnLostPassword = (ImageButton)findViewById(R.id.btnLostPassword);
+        btnLostPassword.setOnClickListener(BtnLostPasswordClick);
+
     }
 
     private View.OnClickListener BtnRegisterClick = new View.OnClickListener() {
         public void onClick(View v) {
             Intent register = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(register);
+        }
+    };
+
+    private View.OnClickListener BtnLostPasswordClick = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent lostPassword = new Intent(LoginActivity.this, LostPasswordActivity.class);
+            startActivity(lostPassword);
         }
     };
 

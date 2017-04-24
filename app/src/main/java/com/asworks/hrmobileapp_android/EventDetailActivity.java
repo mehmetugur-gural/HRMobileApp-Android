@@ -24,6 +24,8 @@ import com.asworks.hrmobileapp_android.model.ResponseBase;
 import com.asworks.hrmobileapp_android.model.SessionManager;
 import com.bumptech.glide.Glide;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -46,6 +48,37 @@ public class EventDetailActivity extends AppCompatActivity {
         currentUser = currentSession.GetCurrentUser();
         setContentView(R.layout.activity_eventdetail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        final ImageButton btnAttendEvent = (ImageButton)findViewById(R.id.btnAttendEvent);
+        final TextView lblAttendEvent = (TextView)findViewById(R.id.lblAttendEvent);
+        btnAttendEvent.setOnClickListener(btnAttendEventClick);
+
+        Call<ResponseBase<List<Event>>> attendedEventListRequest = eventService.attendedEventList(currentUser.getID().toString());
+
+        attendedEventListRequest.enqueue(new Callback<ResponseBase<List<Event>>>() {
+            @Override
+            public void onResponse(Call<ResponseBase<List<Event>>> call, Response<ResponseBase<List<Event>>> response) {
+                
+                if (response.body().data != null)
+                {
+                    List<Event> attendedEventList = response.body().data;
+
+                    for (Event eventItem : attendedEventList)
+                    {
+                        if (eventItem.getID().equals(Integer.parseInt(getIntent().getStringExtra("eventID"))))
+                        {
+                            btnAttendEvent.setEnabled(false);
+                            lblAttendEvent.setText("Bu Etkinliğe Katıldınız");
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBase<List<Event>>> call, Throwable t) {
+
+            }
+        });
 
         Call<ResponseBase<List<EventProfessionQuota>>> professionQuotaRequest = eventService.eventProfessionQuota(getIntent().getStringExtra("eventID"));
 
@@ -106,6 +139,21 @@ public class EventDetailActivity extends AppCompatActivity {
                     }
 
                     txtEventContent.setText(Html.fromHtml(eventContent.toString()));
+
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    try
+                    {
+                        Date eventEndDate = simpleDateFormat.parse(currentEvent.data.getEndDate().substring(0, 10));
+                        Date currentDate = new Date();
+
+                        if (currentDate.after(eventEndDate))
+                        {
+                            btnAttendEvent.setEnabled(false);
+                            lblAttendEvent.setText("Etkinlik Bitti");
+                        }
+                    }
+                    catch (Exception ex)
+                    {}
                 }
             }
             @Override
@@ -113,9 +161,6 @@ public class EventDetailActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Hata Oluştu, Lütfen Tekrar Deneyiniz!", Toast.LENGTH_SHORT).show();
             }
         });
-
-        ImageButton btnAttendEvent = (ImageButton)findViewById(R.id.btnAttendEvent);
-        btnAttendEvent.setOnClickListener(btnAttendEventClick);
     }
 
     private View.OnClickListener btnCompleteAttendEventClick = new View.OnClickListener() {
@@ -215,7 +260,9 @@ public class EventDetailActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getApplicationContext(), "PROFİLİME GİT", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(EventDetailActivity.this, SettingsActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
                             }
                         });
 

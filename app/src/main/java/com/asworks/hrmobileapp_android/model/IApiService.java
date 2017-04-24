@@ -23,6 +23,9 @@ public interface IApiService {
     @GET("/api/aday/giris")
     public Call<ResponseBase<Employee>> login(@Query("mail") String mail, @Query("password") String password);
 
+    @GET("/api/aday/yeni-sifre")
+    public Call<ResponseBase<Employee>> lostPassword(@Query("mail") String mail);
+
     @POST("/api/aday/yeni-aday")
     public Call<ResponseBase<Employee>> register(@Body Employee employeeEntity);
 

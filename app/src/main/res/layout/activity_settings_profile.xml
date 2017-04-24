@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/loginbg">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfileName"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="320dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="0dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/profile_name"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfileSurname"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="320dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/profile_surname"
+        android:textColorHint="@color/colorHintText"
+        android:layout_below="@+id/txtProfileName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfileMail"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="320dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtProfileSurname"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:hint="@string/profile_mail"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfilePassword"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="320dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtProfileMail"
+        android:inputType="textPassword"
+        android:fontFamily="sans-serif"
+        android:maxLines="1"
+        android:hint="@string/profile_password"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfileTCNo"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="320dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtProfilePassword"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/profile_tcidentity"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfilePhone"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="320dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtProfileTCNo"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:hint="@string/profile_tcidentity"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfileAddress"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="320dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtProfilePhone"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/profile_address"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfileBirthDate"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="320dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtProfileAddress"
+        android:inputType="date"
+        android:maxLines="1"
+        android:hint="@string/profile_birthdate"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProfileBirthPlace"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="320dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtProfileBirthDate"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/profile_birthplace"
+        android:textColorHint="@color/colorHintText"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:text="@string/profile_gender"
+            android:fontFamily="sans-serif"
+            android:layout_below="@id/txtProfileBirthPlace"
+            android:id="@+id/lblGender" />
+
+        <Spinner
+            android:id="@+id/genderSelect"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"
+            android:background="@drawable/edittext_rounded_corners"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lblGender"
+            android:textColorHint="@color/colorHintText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:text="@string/profile_driverlicense"
+            android:fontFamily="sans-serif"
+            android:layout_below="@id/genderSelect"
+            android:id="@+id/lblDriverLicense" />
+
+        <Spinner
+            android:id="@+id/driverLicenseSelect"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"
+            android:background="@drawable/edittext_rounded_corners"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lblDriverLicense"
+            android:textColorHint="@color/colorHintText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:text="@string/profile_activedriver"
+            android:fontFamily="sans-serif"
+            android:layout_below="@id/driverLicenseSelect"
+            android:id="@+id/lblActiveDriver" />
+
+        <Spinner
+            android:id="@+id/activeDriverSelect"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"
+            android:background="@drawable/edittext_rounded_corners"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lblActiveDriver"
+            android:textColorHint="@color/colorHintText" />
+
+    <ImageButton
+        android:id="@+id/btnCompleteRegister"
+        android:scaleType="centerInside"
+        android:background="@null"
+        android:gravity="center"
+        android:layout_height="90dp"
+        android:layout_width="90dp"
+        android:src="@drawable/loginbuttonbg"
+        android:layout_below="@+id/txtProfileTCNo"
+        android:layout_alignStart="@+id/txtProfileTCNo"
+        android:layout_alignEnd="@+id/txtProfileTCNo" />
+
+    <TextView
+        android:text="Güncelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/lblLogin"
+        android:textSize="22dp"
+        android:layout_below="@+id/txtProfileTCNo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -47,27 +47,51 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
                 .inflate(R.layout.event_card, parent, false);
 
         ImageView thumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
+        TextView title = (TextView) itemView.findViewById(R.id.title);
+        TextView count = (TextView) itemView.findViewById(R.id.count);
+
         thumbnail.setOnClickListener(thumbnailClick);
+        title.setOnClickListener(titleClick);
+        count.setOnClickListener(countClick);
 
         return new MyViewHolder(itemView);
     }
 
     private View.OnClickListener thumbnailClick = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent eventDetail = new Intent(v.getContext(), EventDetailActivity.class);
-            eventDetail.putExtra("eventID", v.getTag().toString());
-            v.getContext().startActivity(eventDetail);
+            navigateToDetail(v);
         }
     };
+
+    private View.OnClickListener titleClick = new View.OnClickListener() {
+        public void onClick(View v) {
+            navigateToDetail(v);
+        }
+    };
+
+    private View.OnClickListener countClick = new View.OnClickListener() {
+        public void onClick(View v) {
+            navigateToDetail(v);
+        }
+    };
+
+    public void navigateToDetail(View v)
+    {
+        Intent eventDetail = new Intent(v.getContext(), EventDetailActivity.class);
+        eventDetail.putExtra("eventID", v.getTag().toString());
+        v.getContext().startActivity(eventDetail);
+    }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Event event = eventList.get(position);
         holder.title.setText(event.getName());
-        holder.count.setText(event.getBeginDate() + " - " + event.getEndDate());
+        holder.count.setText("Başlangıç : " + event.getBeginDate() + "\n" + "Bitiş : " + event.getEndDate());
 
-        Glide.with(mContext).load("https://cms.aslabs.in/" + event.getEventDocument()).into(holder.thumbnail);
+        Glide.with(mContext).load(IApiService.apiUrl + event.getEventDocument()).into(holder.thumbnail);
         holder.thumbnail.setTag(event.getID());
+        holder.title.setTag(event.getID());
+        holder.count.setTag(event.getID());
     }
 
     @Override

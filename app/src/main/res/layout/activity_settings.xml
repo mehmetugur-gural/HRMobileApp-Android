@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/loginbg">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="15dp"
+        android:text="@string/personal_information"
+        android:fontFamily="sans-serif"
+        android:id="@+id/lblPersonalInfo" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="@string/profile_information"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+        android:fontFamily="sans-serif"
+        android:textSize="22sp"
+        android:paddingLeft="15dp"
+        android:layout_below="@+id/lblPersonalInfo"
+        android:background="@color/cardview_light_background"
+        android:drawableRight="@drawable/arrow_detail"
+        android:paddingRight="20dp"
+        android:id="@+id/btnProfileInfo"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/size_information"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+        android:fontFamily="sans-serif"
+        android:textSize="22sp"
+        android:paddingLeft="15dp"
+        android:layout_below="@+id/btnProfileInfo"
+        android:background="@color/cardview_light_background"
+        android:drawableRight="@drawable/arrow_detail"
+        android:paddingRight="20dp"
+        android:id="@+id/btnSizeInfo"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/available_information"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+        android:fontFamily="sans-serif"
+        android:textSize="22sp"
+        android:paddingLeft="15dp"
+        android:layout_below="@+id/btnSizeInfo"
+        android:background="@color/cardview_light_background"
+        android:drawableRight="@drawable/arrow_detail"
+        android:paddingRight="20dp"
+        android:id="@+id/btnAvailableInfo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="15dp"
+        android:text="@string/job_experience"
+        android:fontFamily="sans-serif"
+        android:id="@+id/lblWorkInfo"
+        android:layout_below="@id/btnAvailableInfo"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/new_job_experience"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+        android:fontFamily="sans-serif"
+        android:textSize="22sp"
+        android:paddingLeft="15dp"
+        android:layout_below="@+id/lblWorkInfo"
+        android:background="@color/cardview_light_background"
+        android:drawableRight="@drawable/new_record"
+        android:paddingRight="15dp"
+        android:id="@+id/btnAddNewWork"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="15dp"
+        android:text="@string/education_information"
+        android:fontFamily="sans-serif"
+        android:id="@+id/lblEducationInfo"
+        android:layout_below="@id/btnAddNewWork"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/new_education_information"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+        android:fontFamily="sans-serif"
+        android:textSize="22sp"
+        android:paddingLeft="15dp"
+        android:layout_below="@+id/lblEducationInfo"
+        android:background="@color/cardview_light_background"
+        android:drawableRight="@drawable/new_record"
+        android:paddingRight="15dp"
+        android:id="@+id/btnAddNewEducation"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="15dp"
+        android:text="@string/certificate_information"
+        android:fontFamily="sans-serif"
+        android:id="@+id/lblCertificateInfo"
+        android:layout_below="@id/btnAddNewEducation"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/new_certificate_information"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+        android:fontFamily="sans-serif"
+        android:textSize="22sp"
+        android:paddingLeft="15dp"
+        android:layout_below="@+id/lblCertificateInfo"
+        android:background="@color/cardview_light_background"
+        android:drawableRight="@drawable/new_record"
+        android:paddingRight="15dp"
+        android:id="@+id/btnAddNewCertificate"/>
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
