@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNewCertificateTitle"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="250dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="Sertifika Adı"
+        android:textColorHint="@color/colorHintText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNewCertificateOrganization"
+        android:background="@drawable/edittext_rounded_corners"
+        android:width="250dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:maxLines="1"
+        android:layout_below="@id/txtNewCertificateTitle"
+        android:hint="Alınan Kurum Adı"
+        android:textColorHint="@color/colorHintText"/>
+
+    <ImageButton
+        android:id="@+id/btnSaveNewCertificateItem"
+        android:background="@null"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:src="@drawable/loginbuttonbg"
+        android:layout_below="@id/txtNewCertificateOrganization"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:text="Bilgileri Kaydet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/lblAttendEvent"
+        android:textSize="22dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="15dp"
+        android:layout_centerInParent="true"
+        android:layout_alignBottom="@+id/btnSaveNewCertificateItem"/>
+
+</RelativeLayout>

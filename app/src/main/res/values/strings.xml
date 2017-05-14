@@ -48,5 +48,20 @@
     <string name="profile_cv">CV Dosyası</string>
     <string name="profile_driverlicense">Ehliyet Durumu</string>
     <string name="profile_activedriver">Aktif Araç Kullanımı</string>
+    
+    <string name="profile_height">Boy</string>
+    <string name="profile_weight">Kilo</string>
+    <string name="profile_haircolor">Saç Rengi</string>
+    <string name="profile_eyecolor">Göz Rengi</string>
+    <string name="profile_upperbodysize">Üst Beden Ölçüsü</string>
+    <string name="profile_lowerbodysize">Alt Beden Ölçüsü</string>
+    <string name="profile_chestsize">Göğüs Ölçüsü</string>
+    <string name="profile_waistsize">Bel Ölçüsü</string>
+    <string name="profile_hipsize">Basen Ölçüsü</string>
+    <string name="profile_shoesize">Ayakkabı Numarası</string>
+    <string name="profile_jacketsize">Ceket Beden Ölçüsü</string>
+    <string name="profile_pantsize">Pantolon Beden Ölçüsü</string>
+    <string name="profile_jeansize">Kot Beden Ölçüsü</string>
+    <string name="profile_skirtsize">Etek Beden Ölçüsü</string>
 
 </resources>

@@ -107,7 +107,7 @@
         android:layout_below="@id/txtProfileTCNo"
         android:inputType="phone"
         android:maxLines="1"
-        android:hint="@string/profile_tcidentity"
+        android:hint="@string/profile_phone"
         android:textColorHint="@color/colorHintText"/>
 
     <EditText
@@ -140,6 +140,7 @@
         android:inputType="date"
         android:maxLines="1"
         android:hint="@string/profile_birthdate"
+        android:focusable="false"
         android:textColorHint="@color/colorHintText"/>
 
     <EditText
@@ -228,25 +229,25 @@
             android:textColorHint="@color/colorHintText" />
 
     <ImageButton
-        android:id="@+id/btnCompleteRegister"
+        android:id="@+id/btnUpdateProfile"
         android:scaleType="centerInside"
         android:background="@null"
         android:gravity="center"
         android:layout_height="90dp"
         android:layout_width="90dp"
         android:src="@drawable/loginbuttonbg"
-        android:layout_below="@+id/txtProfileTCNo"
-        android:layout_alignStart="@+id/txtProfileTCNo"
-        android:layout_alignEnd="@+id/txtProfileTCNo" />
+        android:layout_below="@+id/activeDriverSelect"
+        android:layout_alignStart="@+id/activeDriverSelect"
+        android:layout_alignEnd="@+id/activeDriverSelect" />
 
     <TextView
         android:text="Güncelle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryText"
-        android:id="@+id/lblLogin"
+        android:id="@+id/lblUpdateProfile"
         android:textSize="22dp"
-        android:layout_below="@+id/txtProfileTCNo"
+        android:layout_below="@+id/activeDriverSelect"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp" />
 

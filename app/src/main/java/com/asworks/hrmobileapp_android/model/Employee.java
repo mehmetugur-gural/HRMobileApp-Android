@@ -71,13 +71,13 @@ public class Employee {
     private String lowerBodySize;
     @SerializedName("ChestSize")
     @Expose
-    private Object chestSize;
+    private String chestSize;
     @SerializedName("WaistSize")
     @Expose
-    private Object waistSize;
+    private String waistSize;
     @SerializedName("HipSize")
     @Expose
-    private Object hipSize;
+    private String hipSize;
     @SerializedName("ShoeSize")
     @Expose
     private String shoeSize;
@@ -92,7 +92,7 @@ public class Employee {
     private String jeanSize;
     @SerializedName("SkirtSize")
     @Expose
-    private Object skirtSize;
+    private String skirtSize;
     @SerializedName("EmployeeAvailability")
     @Expose
     private List<EmployeeAvailability> employeeAvailability = null;
@@ -114,6 +114,9 @@ public class Employee {
     @SerializedName("IsActive")
     @Expose
     private Boolean isActive;
+    @SerializedName("Status")
+    @Expose
+    private Integer status;
     @SerializedName("CreatedDate")
     @Expose
     private String createdDate;
@@ -289,27 +292,27 @@ public class Employee {
         this.lowerBodySize = lowerBodySize;
     }
 
-    public Object getChestSize() {
+    public String getChestSize() {
         return chestSize;
     }
 
-    public void setChestSize(Object chestSize) {
+    public void setChestSize(String chestSize) {
         this.chestSize = chestSize;
     }
 
-    public Object getWaistSize() {
+    public String getWaistSize() {
         return waistSize;
     }
 
-    public void setWaistSize(Object waistSize) {
+    public void setWaistSize(String waistSize) {
         this.waistSize = waistSize;
     }
 
-    public Object getHipSize() {
+    public String getHipSize() {
         return hipSize;
     }
 
-    public void setHipSize(Object hipSize) {
+    public void setHipSize(String hipSize) {
         this.hipSize = hipSize;
     }
 
@@ -345,11 +348,11 @@ public class Employee {
         this.jeanSize = jeanSize;
     }
 
-    public Object getSkirtSize() {
+    public String getSkirtSize() {
         return skirtSize;
     }
 
-    public void setSkirtSize(Object skirtSize) {
+    public void setSkirtSize(String skirtSize) {
         this.skirtSize = skirtSize;
     }
 
@@ -407,6 +410,14 @@ public class Employee {
 
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public String getCreatedDate() {

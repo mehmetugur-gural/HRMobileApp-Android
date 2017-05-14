@@ -7,10 +7,10 @@ public class EmployeeJobExperience {
 
     @SerializedName("CompanyName")
     @Expose
-    private Object companyName;
+    private String companyName;
     @SerializedName("Title")
     @Expose
-    private Object title;
+    private String title;
     @SerializedName("WorkYear")
     @Expose
     private Integer workYear;
@@ -19,7 +19,7 @@ public class EmployeeJobExperience {
     private Integer workMonth;
     @SerializedName("QuitReason")
     @Expose
-    private Object quitReason;
+    private String quitReason;
     @SerializedName("Salary")
     @Expose
     private Integer salary;
@@ -39,19 +39,19 @@ public class EmployeeJobExperience {
     @Expose
     private Integer createdBy;
 
-    public Object getCompanyName() {
+    public String getCompanyName() {
         return companyName;
     }
 
-    public void setCompanyName(Object companyName) {
+    public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
 
-    public Object getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(Object title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -71,11 +71,11 @@ public class EmployeeJobExperience {
         this.workMonth = workMonth;
     }
 
-    public Object getQuitReason() {
+    public String getQuitReason() {
         return quitReason;
     }
 
-    public void setQuitReason(Object quitReason) {
+    public void setQuitReason(String quitReason) {
         this.quitReason = quitReason;
     }
 

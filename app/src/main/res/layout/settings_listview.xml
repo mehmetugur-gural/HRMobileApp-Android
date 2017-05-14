@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/colorPrimaryText">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:text="Başlık"
+        android:fontFamily="sans-serif"
+        android:id="@+id/lblListViewTitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:text="Açıklama"
+        android:fontFamily="sans-serif"
+        android:layout_below="@+id/lblListViewTitle"
+        android:id="@+id/lblListViewDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        android:textColor="@color/colorPrimary"
+        android:text="Tarih"
+        android:fontFamily="sans-serif"
+        android:layout_below="@+id/lblListViewDescription"
+        android:id="@+id/lblListViewAlternateDescription" />
+
+    <ImageView
+        android:id="@+id/imgListViewDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_detail"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="15dp"
+        android:paddingTop="25dp"/>
+</RelativeLayout>

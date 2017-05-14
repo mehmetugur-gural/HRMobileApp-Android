@@ -80,6 +80,10 @@ public class LoginActivity extends AppCompatActivity {
                             Intent mainPage = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(mainPage);
                         }
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(), "Hatalı Kullanıcı Adı Veya Şifre Girdiniz!", Toast.LENGTH_LONG).show();
+                        }
                     }
 
                     @Override

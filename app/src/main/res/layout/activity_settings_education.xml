@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/loginbg">
+    <ListView
+        android:id="@+id/lvEducationList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+    </ListView>
 
+    <ImageButton
+        android:id="@+id/btnAddNewEducationItem"
+        android:scaleType="centerInside"
+        android:background="@null"
+        android:gravity="center"
+        android:layout_height="90dp"
+        android:layout_width="90dp"
+        android:src="@drawable/loginbuttonbg"
+        android:layout_below="@+id/lvEducationList"
+        android:layout_alignStart="@+id/lvEducationList"
+        android:layout_alignEnd="@+id/lvEducationList" />
+
+    <TextView
+        android:text="Yeni Ekle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/lblAddNewEducationItem"
+        android:textSize="22dp"
+        android:layout_below="@+id/lvEducationList"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
 </RelativeLayout>
