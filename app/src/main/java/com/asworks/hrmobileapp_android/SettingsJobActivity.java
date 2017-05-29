@@ -43,7 +43,7 @@ public class SettingsJobActivity extends AppCompatActivity {
     EditText txtNewJobMonth;
     EditText txtNewJobSalary;
     ImageButton btnSaveNewJobItem;
-    TextView lblAttendEvent;
+    TextView lblAddNewJobItem;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,14 +59,14 @@ public class SettingsJobActivity extends AppCompatActivity {
         lvJobList.setAdapter(jobAdapter);
 
         final ImageButton btnAddNewJobItem = (ImageButton) findViewById(R.id.btnAddNewJobItem);
-        lblAttendEvent = (TextView) findViewById(R.id.lblAttendEvent);
+        lblAddNewJobItem = (TextView) findViewById(R.id.lblAddNewJobItem);
         btnAddNewJobItem.setOnClickListener(btnAddNewJobItemClick);
 
         lvJobList.setOnItemClickListener(lvJobListItemClick);
 
         if (jobExperienceList != null && jobExperienceList.size() > 2) {
             btnAddNewJobItem.setVisibility(View.GONE);
-            lblAttendEvent.setVisibility(View.GONE);
+            lblAddNewJobItem.setVisibility(View.GONE);
         }
     }
 
@@ -156,7 +156,11 @@ public class SettingsJobActivity extends AppCompatActivity {
                     registerEmployee.getEmployeeJobExperience().add(currentJob);
                 }
 
+                registerEmployee.setPassword("");
+
                 Call<ResponseBase<Employee>> registerRequest = registerService.register(registerEmployee);
+
+                registerEmployee.setPassword(currentUser.getPassword());
 
                 registerRequest.enqueue(new Callback<ResponseBase<Employee>>() {
                     @Override

@@ -18,8 +18,6 @@ import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Callback;
 
-import com.facebook.FacebookSdk;
-
 
 public class LoginActivity extends AppCompatActivity {
 

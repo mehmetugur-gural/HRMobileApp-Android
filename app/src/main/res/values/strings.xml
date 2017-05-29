@@ -26,6 +26,8 @@
     <string name="profile_information">Profil Bilgilerim</string>
     <string name="size_information">Boy - Kilo &amp; Ölçü Bilgilerim</string>
     <string name="available_information">Çalışabileceğim Gün &amp; Saatler</string>
+    <string name="profile_pictures">Fotoğraflarım</string>
+    <string name="cv_files">CV &amp; Dosyalarım</string>
     <string name="job_experience">İş Deneyimlerim</string>
     <string name="new_job_experience">Yeni İş Deneyimi Ekle</string>
     <string name="education_information">Eğitim Bilgilerim</string>

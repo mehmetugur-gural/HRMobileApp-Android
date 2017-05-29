@@ -24,6 +24,12 @@ public class SettingsActivity extends AppCompatActivity {
         Button btnAvailableInfo = (Button)findViewById(R.id.btnAvailableInfo);
         btnAvailableInfo.setOnClickListener(BtnAvailableInfoClick);
 
+        Button btnProfilePictures = (Button)findViewById(R.id.btnProfilePictures);
+        btnProfilePictures.setOnClickListener(BtnProfilePicturesClick);
+
+//        Button btnProfileCV = (Button)findViewById(R.id.btnProfileCV);
+//        btnProfileCV.setOnClickListener(BtnProfileCVClick);
+
         Button btnAddNewWork = (Button)findViewById(R.id.btnAddNewWork);
         btnAddNewWork.setOnClickListener(BtnAddNewWorkClick);
 
@@ -47,6 +53,20 @@ public class SettingsActivity extends AppCompatActivity {
             startActivity(intent);
         }
     };
+
+    private View.OnClickListener BtnProfilePicturesClick = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent intent = new Intent(SettingsActivity.this, SettingsPicturesActivity.class);
+            startActivity(intent);
+        }
+    };
+
+//    private View.OnClickListener BtnProfileCVClick = new View.OnClickListener() {
+//        public void onClick(View v) {
+//            Intent intent = new Intent(SettingsActivity.this, SettingsCVActivity.class);
+//            startActivity(intent);
+//        }
+//    };
 
     private View.OnClickListener BtnAvailableInfoClick = new View.OnClickListener() {
         public void onClick(View v) {

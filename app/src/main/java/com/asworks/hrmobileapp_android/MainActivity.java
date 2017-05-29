@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ActiveEvents(), "AKTİF");
-        adapter.addFragment(new AttendedEvents(), "KATILDIKLARIN");
+        adapter.addFragment(new AttendedEvents(), "KATILDIĞIN");
         adapter.addFragment(new PastEvents(), "GEÇMİŞ");
         viewPager.setAdapter(adapter);
 

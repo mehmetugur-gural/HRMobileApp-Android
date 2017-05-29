@@ -29,6 +29,9 @@ public interface IApiService {
     @POST("/api/aday/yeni-aday")
     public Call<ResponseBase<Employee>> register(@Body Employee employeeEntity);
 
+    @POST("/api/aday/resim-kaydet")
+    public Call<ResponseBase<String>> saveImage(@Body EmployeeImage employeeImage);
+
     @GET("api/etkinlik/etkinlik-listesi")
     public  Call<ResponseBase<List<Event>>> eventList();
 
@@ -43,6 +46,9 @@ public interface IApiService {
 
     @GET("api/etkinlik-kota/etkinlik-kota/{eventID}")
     public  Call<ResponseBase<List<EventProfessionQuota>>> eventProfessionQuota(@Query("eventID") String eventID);
+
+    @GET("api/meslek/meslek-listesi")
+    public  Call<ResponseBase<List<Profession>>> professionList();
 
     @POST("api/etkinlik/etkinlik-aday-kayit")
     public Call<ResponseBase<Event>> saveEventEmployee(@Query("eventID") Integer eventID, @Query("employeeID") Integer employeeID, @Query("professionID") Integer professionID);

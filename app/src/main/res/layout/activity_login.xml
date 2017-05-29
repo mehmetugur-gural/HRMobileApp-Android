@@ -144,7 +144,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/fblogo"
+        android:src="@drawable/fblogo"
         android:id="@+id/imgFb"
         android:layout_alignTop="@+id/ibTest"
         android:layout_alignStart="@+id/lblRegister"

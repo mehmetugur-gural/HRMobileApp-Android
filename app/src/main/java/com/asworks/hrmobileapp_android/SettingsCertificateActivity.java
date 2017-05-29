@@ -135,7 +135,9 @@ public class SettingsCertificateActivity extends AppCompatActivity {
                     registerEmployee.getEmployeeCertificateAndLanguage().add(currentCertificate);
                 }
 
+                registerEmployee.setPassword("");
                 Call<ResponseBase<Employee>> registerRequest = registerService.register(registerEmployee);
+                registerEmployee.setPassword(currentUser.getPassword());
 
                 registerRequest.enqueue(new Callback<ResponseBase<Employee>>() {
                     @Override

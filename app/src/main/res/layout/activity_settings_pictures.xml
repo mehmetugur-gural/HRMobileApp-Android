@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/loginbg">
+
+    <ImageButton
+        android:id="@+id/btnAddNewPicture"
+        android:scaleType="centerInside"
+        android:background="@null"
+        android:gravity="center"
+        android:layout_height="90dp"
+        android:layout_width="90dp"
+        android:src="@drawable/loginbuttonbg"
+        android:layout_alignStart="@+id/picture_recycler_view"
+        android:layout_alignEnd="@+id/picture_recycler_view" />
+
+    <TextView
+        android:text="Yeni Ekle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:id="@+id/lblAddNewJobItem"
+        android:textSize="22dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/picture_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:layout_below="@+id/btnAddNewPicture"/>
+</RelativeLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,6 +24,7 @@ import com.asworks.hrmobileapp_android.model.ListViewJobAdapter;
 import com.asworks.hrmobileapp_android.model.ResponseBase;
 import com.asworks.hrmobileapp_android.model.SessionManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -51,7 +53,7 @@ public class SettingsEducationActivity extends AppCompatActivity {
 
         currentSession = new SessionManager(getApplicationContext());
         currentUser = currentSession.GetCurrentUser();
-        lvEducationList = (ListView)findViewById(R.id.lvJobList);
+        lvEducationList = (ListView)findViewById(R.id.lvEducationList);
         educationList = currentUser.getEmployeeEducation();
         ListViewEducationAdapter educationAdapter = new ListViewEducationAdapter(this, educationList);
         lvEducationList.setAdapter(educationAdapter);
@@ -141,7 +143,9 @@ public class SettingsEducationActivity extends AppCompatActivity {
                     registerEmployee.getEmployeeEducation().add(currentEducation);
                 }
 
+                registerEmployee.setPassword("");
                 Call<ResponseBase<Employee>> registerRequest = registerService.register(registerEmployee);
+                registerEmployee.setPassword(currentUser.getPassword());
 
                 registerRequest.enqueue(new Callback<ResponseBase<Employee>>() {
                     @Override

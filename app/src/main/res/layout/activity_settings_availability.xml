@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/loginbg">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="15dp"
+            android:text="Çalışabileceğim Meslekler"
+            android:fontFamily="sans-serif"
+            android:id="@+id/lblProfession" />
+
+        <ListView
+            android:id="@+id/listProfession"
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:layout_below="@+id/lblProfession"
+            android:background="@color/cardview_light_background"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="15dp"
+            android:text="Çalışabileceğim Günler"
+            android:fontFamily="sans-serif"
+            android:id="@+id/lblWorkDays"
+            android:layout_below="@+id/listProfession"/>
+
+        <ListView
+            android:id="@+id/listWorkDays"
+            android:layout_width="fill_parent"
+            android:layout_height="360dp"
+            android:layout_below="@+id/lblWorkDays"
+            android:background="@color/cardview_light_background"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="15dp"
+            android:text="Çalışma Şeklim"
+            android:layout_below="@+id/listWorkDays"
+            android:fontFamily="sans-serif"
+            android:id="@+id/lblWorkType" />
+
+        <ListView
+            android:id="@+id/listWorkType"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/lblWorkType"
+            android:background="@color/cardview_light_background"
+            />
+
+        <ImageButton
+            android:id="@+id/btnAddNewAvailabilityItem"
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:gravity="center"
+            android:layout_height="90dp"
+            android:layout_width="90dp"
+            android:src="@drawable/loginbuttonbg"
+            android:layout_below="@+id/listWorkType"
+            android:layout_alignStart="@+id/listWorkType"
+            android:layout_alignEnd="@+id/listWorkType" />
+
+        <TextView
+            android:text="Kaydet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryText"
+            android:id="@+id/lblAddNewCertificateItem"
+            android:textSize="22dp"
+            android:layout_below="@+id/listWorkType"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp" />
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
